@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link href="styles.css" rel="stylesheet">
+    <title>Document</title>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="#">Dramas y series</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+          <div class="navbar-nav">
+            <a class="nav-item nav-link active" href="main.html">Inicio<span class="sr-only">(current)</span></a>
+            <a class="nav-item nav-link" href="ingresar.html">Agregar</a>
+          </div>
+        </div>
+      </nav>
+
+    <form class="row g-3" id="formulario" action="/entrega20" method="post" enctype="multipart/form-data"> 
+        <div class="col-md-4">
+          <label for="nombre" class="form-label">Nombre</label>
+          <input type="text" class="form-control" id="nombre">
+        </div>
+        <div class="col-md-4">
+          <label for="actor-actriz" class="form-label">Actriz o actor principal</label>
+          <input type="text" class="form-control" id="actor-actriz">
+        </div>
+        <div class="col-md-4">
+            <label for="año" class="form-label">Año de estreno</label>
+            <input type="text" class="form-control" id="año">
+          </div>
+          <div class="col-md-4">
+            <label for="sinopsis" class="form-label">Sinopsis</label>
+            <input type="text" class="form-control" id="sinopsis">
+          </div>
+          <div class="col-md-4">
+            <label for="emisora" class="form-label">Emisora</label>
+            <input type="text" class="form-control" id="emisora">
+          </div>
+          <div class="col-md-4">
+            <label for="genero" class="form-label">Género</label>
+            <input type="text" class="form-control" id="genero">
+          </div>
+          <div class="col-md-4">
+            <label for="cantcaps" class="form-label">Cantidad de capítulos</label>
+            <input type="number" class="form-control" id="cantcaps">
+          </div>
+          <div class="col-md-4">
+            <label for="foto" class="form-label">Link de foto de portada</label>
+            <input type="text" class="form-control" id="foto" name="foto">
+          </div>
+          <div class="col-md-4">
+            <label for="link" class="form-label">Link en plataforma de streaming</label>
+            <input type="text" class="form-control" id="link">
+          </div>
+      
+        <button type="submit" class="btn btn-primary" id="enviar">Enviar</button>
+      </form>
+</body>
+<script src="../server/init.js"></script>
+<script src="ingresar.js"></script>
+</html>
