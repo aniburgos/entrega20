@@ -2,7 +2,11 @@ document.addEventListener("DOMContentLoaded", () => {
     let URL = "http://localhost:3001/entrega20/";
     let info = document.getElementById("aca");
   
-    fetch(URL)
+    fetch(URL, {
+      headers: {
+        'access-token': 'Bearer ' + localStorage.getItem('accessToken'),
+      },
+    })
       .then((response) => response.json())
       .then((data) => {
         console.log("La data es", data); //
