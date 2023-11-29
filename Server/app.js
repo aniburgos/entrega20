@@ -1,8 +1,7 @@
 const express = require("express");
 const mariadb = require("mariadb");
 const cors = require("cors")
-const multer = require('multer');
-const upload = multer({ dest: 'img/' });
+
 
 const pool = mariadb.createPool({
   host: "localhost",
@@ -17,7 +16,7 @@ const port = 3001;
 
 app.use(express.json());
 app.use(cors());
-app.use(upload.single('foto'));
+
 
 app.get("/", (req, res) => {
   res.send("<h1>Bienvenid@ al servidor</h1>");
@@ -28,7 +27,7 @@ app.get("/entrega20", async (req, res) => {
   try {
     conn = await pool.getConnection();
     const rows = await conn.query(
-      "SELECT id, nombre, actorprincipal, año, sinopsis, emisora, genero, cantcaps, foto, link FROM series"
+      "SELECT id, nombre, actorprincipal, año, sinopsis, emisora, genero, cantcaps, link FROM series"
     );
 
     res.json(rows);
@@ -46,8 +45,8 @@ app.post("/entrega20", async (req, res) => {
     conn = await pool.getConnection();
    console.log(req.body)
     const response = await conn.query(
-      `INSERT INTO series(nombre, actorprincipal, año, sinopsis, emisora, genero, cantcaps, foto, link) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)`,
-      [req.body.nombre, req.body.actorprincipal, req.body.año, req.body.sinopsis, req.body.emisora, req.body.genero, req.body.cantcaps, req.body.foto, req.body.link]
+      `INSERT INTO series(nombre, actorprincipal, año, sinopsis, emisora, genero, cantcaps, link) VALUES (?, ?, ?, ?, ?, ?, ?, ?)`,
+      [req.body.nombre, req.body.actorprincipal, req.body.ano, req.body.sinopsis, req.body.emisora, req.body.genero, req.body.cantcaps, req.body.link]
     );
     res.json({ id: parseInt(response.insertId), ...req.body });
 
