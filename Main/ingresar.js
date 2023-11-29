@@ -1,37 +1,28 @@
 function postDatos(data) {
-    requestCRUD('POST', data).then((response) => response);
+  requestCRUD("POST", data).then((response) => response);
 }
 
-document.addEventListener('DOMContentLoaded', function () {
-    document.getElementById('enviar').addEventListener('click', function (e) {
+document.addEventListener("DOMContentLoaded", function () {
+  document.getElementById("enviar").addEventListener("click", function (e) {
+    e.preventDefault(); 
 
-        e.preventDefault(); // Evitar el comportamiento predeterminado del botón
-
-        let nombre = document.getElementById("nombre").value;
-        let actoractriz = document.getElementById("actor-actriz").value;
-        let año = document.getElementById("año").value;
-        let sinopsis = document.getElementById("sinopsis").value;
-        let emisora = document.getElementById("emisora").value;
-        let genero = document.getElementById("genero").value;
-        let cantcaps = document.getElementById("cantcaps").value;
-let foto = document.getElementById("foto").value; // Obtener el archivo de imagen
-        let link = document.getElementById("link").value;
-
-        // Crear un objeto FormData para enviar datos del formulario
-        let formData = new FormData();
-        formData.append('nombre', nombre);
-        formData.append('actoractriz', actoractriz);
-        formData.append('año', año);
-        formData.append('sinopsis', sinopsis);
-        formData.append('emisora', emisora);
-        formData.append('genero', genero);
-        formData.append('cantcaps', cantcaps);
-formData.append('foto', foto);
-        formData.append('link', link);
-
-        postDatos(formData);
+    let nombre = document.getElementById("nombre");
+    let actoractriz = document.getElementById("actoractriz");
+    let año = document.getElementById("año");
+    let sinopsis = document.getElementById("sinopsis");
+    let emisora = document.getElementById("emisora");
+    let genero = document.getElementById("genero");
+    let cantcaps = document.getElementById("cantcaps");
+    // let foto = document.getElementById("foto").value; // Obtener el archivo de imagen
+    let link = document.getElementById("link");
 
 
-        alert("Agregada con éxito");
-    });
+
+    postDatos({ nombre: nombre.value, actoractriz: actoractriz.value, año: año.value, sinopsis: sinopsis.value, emisora: emisora.value, genero: genero.value, cantcaps: cantcaps.value, link: link.value });
+    [nombre, actoractriz, año, sinopsis, emisora, genero, cantcaps, link].forEach(element => element.value = "");
+    
+
+
+    alert("Agregada con éxito");
+  });
 });

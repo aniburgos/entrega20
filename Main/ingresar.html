@@ -22,42 +22,38 @@
         </div>
       </nav>
 
-    <form class="row g-3" id="formulario" action="/entrega20" method="post" enctype="multipart/form-data"> 
+    <form class="row g-3" id="formulario"> 
         <div class="col-md-4">
           <label for="nombre" class="form-label">Nombre</label>
-          <input type="text" class="form-control" id="nombre">
+          <input type="text" class="form-control" id="nombre" name="fonombreto">
         </div>
         <div class="col-md-4">
-          <label for="actor-actriz" class="form-label">Actriz o actor principal</label>
-          <input type="text" class="form-control" id="actor-actriz">
+          <label for="actoractriz" class="form-label">Actriz o actor principal</label>
+          <input type="text" class="form-control" id="actoractriz" name="actoractriz">
         </div>
         <div class="col-md-4">
             <label for="año" class="form-label">Año de estreno</label>
-            <input type="text" class="form-control" id="año">
+            <input type="text" class="form-control" id="año" name="año">
           </div>
           <div class="col-md-4">
             <label for="sinopsis" class="form-label">Sinopsis</label>
-            <input type="text" class="form-control" id="sinopsis">
+            <input type="text" class="form-control" id="sinopsis" name="sinopsis">
           </div>
           <div class="col-md-4">
             <label for="emisora" class="form-label">Emisora</label>
-            <input type="text" class="form-control" id="emisora">
+            <input type="text" class="form-control" id="emisora" name="emisora">
           </div>
           <div class="col-md-4">
             <label for="genero" class="form-label">Género</label>
-            <input type="text" class="form-control" id="genero">
+            <input type="text" class="form-control" id="genero" name="genero">
           </div>
           <div class="col-md-4">
             <label for="cantcaps" class="form-label">Cantidad de capítulos</label>
-            <input type="number" class="form-control" id="cantcaps">
-          </div>
-          <div class="col-md-4">
-            <label for="foto" class="form-label">Link de foto de portada</label>
-            <input type="text" class="form-control" id="foto" name="foto">
+            <input type="text" class="form-control" id="cantcaps" name="cantcaps">
           </div>
           <div class="col-md-4">
             <label for="link" class="form-label">Link en plataforma de streaming</label>
-            <input type="text" class="form-control" id="link">
+            <input type="text" class="form-control" id="link" name="link">
           </div>
       
         <button type="submit" class="btn btn-primary" id="enviar">Enviar</button>

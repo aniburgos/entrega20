@@ -11,7 +11,7 @@ document.addEventListener("DOMContentLoaded", () => {
                   info.innerHTML += `
           <div class="card">
             <figure class="card__thumb">
-                <img src="${serie.foto}" class="card__image">
+                <img src="img/fondo.jpg" class="card__image">
                 <figcaption class="card__caption">
                     <h2 class="card__title">${serie.nombre}</h2>
                     <p class="card__snippet">${serie.sinopsis}</p>
